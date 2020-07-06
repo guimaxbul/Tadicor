@@ -5,7 +5,8 @@
 odoo.define('website_snippet_data_slider', function(require){
   "use strict";
     
-    var animation = require('web_editor.snippets.animation');
+    //var animation = require('web_editor.snippets.animation');
+    var animation = require('website.content.snippets.animation');
     
     var defaults = {
         lazyLoad: 'ondemand',
