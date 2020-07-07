@@ -13,7 +13,7 @@ odoo.define('website_snippet_data_slider', function(require){
         slidesToShow: 5,
         slidesToScroll: 5,
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
         arrows: true,
         autoplay: true,
@@ -38,6 +38,7 @@ odoo.define('website_snippet_data_slider', function(require){
         selector: ".o_data_slider",
         
         slickSetOption: function(event, key, val) {
+                        console.log('slick',val);
             switch (val) {
                 case 'true':
                     val = true;
