@@ -24,7 +24,7 @@ odoo.define('website_snippet_data_slider', function(require){
         data_domain: [['website_published', '=', true]],
         data_image_field: 'image_128',
         data_name_field: 'display_name',
-        data_title: 'Featured Products',
+        data_title: '',
         data_title_tag: 'h1',
         data_title_class: 'text-center',
         data_uri_field: 'website_url',

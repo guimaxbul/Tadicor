@@ -3,9 +3,9 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 import json
-from openerp import http
-from openerp.http import request
-from openerp.addons.website.controllers.main import Website
+from odoo import http
+from odoo.http import request
+from odoo.addons.website.controllers.main import Website
 
 
 import logging
@@ -33,7 +33,9 @@ class Website(Website):
         if limit:
             limit = int(limit)
         for rec_id in request.env[model].search(domain, limit=limit):
-            res.append({
-                k: getattr(rec_id, k, None) for k in fields
-            })
+            categ_id = request.env['product.public.category'].sudo().search([('name', 'in', ['ofertas', 'Ofertas', 'OFERTAS'])])
+            if categ_id in rec_id.public_categ_ids:
+                res.append({
+                    k: getattr(rec_id, k, None) for k in fields
+                })
         return json.dumps(res)
