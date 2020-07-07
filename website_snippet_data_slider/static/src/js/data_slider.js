@@ -10,8 +10,8 @@ odoo.define('website_snippet_data_slider', function(require){
     
     var defaults = {
         lazyLoad: 'ondemand',
-        slidesToShow: 10,
-        slidesToScroll: 1,
+        slidesToShow: 5,
+        slidesToScroll: 5,
         dots: true,
         infinite: true,
         speed: 500,
